@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leacock/CLionProjects/JsonDemo/ParseJsonFileComplex/main.cpp
+iostream
+-
+nlohmann/json.hpp
+-
+fstream
+-
+iomanip
+-
+

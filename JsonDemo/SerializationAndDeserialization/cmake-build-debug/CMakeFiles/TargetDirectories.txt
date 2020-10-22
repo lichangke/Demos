@@ -1,0 +1,3 @@
+/home/leacock/CLionProjects/JsonDemo/SerializationAndDeserialization/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/leacock/CLionProjects/JsonDemo/SerializationAndDeserialization/cmake-build-debug/CMakeFiles/SerializationAndDeserialization.dir
+/home/leacock/CLionProjects/JsonDemo/SerializationAndDeserialization/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,35 @@
+{
+    "output": {
+        "crf": 31,
+        "frameRate": 20,
+        "height": 1080,
+        "width": 1000
+    },
+    "tracks": [
+        {
+            "name": "t1",
+            "pieces": [
+                {
+                    "endTime": 6,
+                    "file": "x.mp4",
+                    "startTime": 2
+                },
+                {
+                    "endTime": 13,
+                    "file": "y.mp4",
+                    "startTime": 9
+                }
+            ]
+        },
+        {
+            "name": "t2",
+            "pieces": [
+                {
+                    "endTime": 10,
+                    "file": "z.mp4",
+                    "startTime": 0
+                }
+            ]
+        }
+    ]
+}
