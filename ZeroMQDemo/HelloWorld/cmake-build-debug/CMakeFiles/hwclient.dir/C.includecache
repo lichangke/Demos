@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leacock/CLionProjects/LearnDemos/ZeroMQDemo/HelloWorld/hwclient.c
+zmq.h
+-
+stdio.h
+-
+
