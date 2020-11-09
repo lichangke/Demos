@@ -1,4 +1,0 @@
-/home/leacock/CLionProjects/LearnDemos/ZeroMQDemo/HelloWorld/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/leacock/CLionProjects/LearnDemos/ZeroMQDemo/HelloWorld/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/leacock/CLionProjects/LearnDemos/ZeroMQDemo/HelloWorld/cmake-build-debug/CMakeFiles/hwserver.dir
-/home/leacock/CLionProjects/LearnDemos/ZeroMQDemo/HelloWorld/cmake-build-debug/CMakeFiles/hwclient.dir
