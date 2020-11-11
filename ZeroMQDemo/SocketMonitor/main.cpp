@@ -22,6 +22,9 @@ public:
     }
     ~ZeroMQMonitorTest() {
         bOnRunning = false;
+        /// 关闭套接字、销毁上下文
+        zmq_close (socket);
+        zmq_ctx_destroy (context);
     }
     int start(){
         bOnRunning = true;
@@ -84,7 +87,7 @@ private:
         while(bOnRunning) {
             /// IO多路复用  1 表示使用 items 数组中的第一个
             /// timeout值是 -1，zmq_poll()进入无限阻塞等待状态，直到至少一个zmq_pollitem_t项上请求的事件发生了
-            zmq_poll(items,1, -1);
+            zmq_poll(items,1, 1000);
 
             if (!(items[0].revents & ZMQ_POLLIN)) {
                 // 监听的事件为 ZMQ_POLLIN 应该进不来
@@ -156,7 +159,7 @@ private:
         item.events = ZMQ_POLLIN;
         zmq_msg_t msg;
         while (bOnRunning) {
-            zmq_poll(&item, 1, -1);
+            zmq_poll(&item, 1, 1000);
             if(item.revents == ZMQ_POLLIN) {
                 zmq_msg_init(&msg);
                 zmq_msg_recv(&msg, socket, 0);
@@ -179,17 +182,16 @@ private:
                 delete[] str;
             }
         }
+        int test = 1;
     }
 };
-
-
-
 
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
     ZeroMQMonitorTest zeroMqMonitorTest;
     zeroMqMonitorTest.start();
-    pause();
+    getchar();
+    zeroMqMonitorTest.stop();
     return 0;
 }
