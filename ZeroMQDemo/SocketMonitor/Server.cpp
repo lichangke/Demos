@@ -2,7 +2,6 @@
 #include <zmq.h>
 #include <thread>
 #include <cstring>
-#include <unistd.h>
 
 class ZeroMQMonitorTest{
 
@@ -29,7 +28,7 @@ public:
     int start(){
         bOnRunning = true;
         /// 4、绑定 socket
-        zmq_bind(socket, "tcp://0.0.0.0:8888");
+        zmq_bind(socket, "tcp://0.0.0.0:5555");
 
         /// 创建线程 监听 套接字事件  ZMQ_EVENT_ALL 所有事件
         zmq_socket_monitor(socket, "inproc://monitor.inproc", ZMQ_EVENT_ALL);
@@ -169,7 +168,7 @@ private:
                 int size = zmq_msg_size(&msg);
                 std::cout << "msg size = " << zmq_msg_size(&msg) << std::endl;
                 const char *data = (const char *)zmq_msg_data(&msg);
-                char *str = new char[size+1];
+                char *str = new char[size+1]{'\0'}; //初始化为 '\0'   zmq_msg_recv 接收不带结束符
                 memcpy(str, data, size);
                 std::cout << "Receive: \n" << str << std::endl;
                 zmq_msg_close(&msg);
