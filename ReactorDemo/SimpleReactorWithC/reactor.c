@@ -22,7 +22,7 @@ void recvdata(int fd, int events, void *arg);
 void senddata(int fd, int events, void *arg);
 typedef void (*Callback_t)(int , int , void*);
 
-/// 抽象事件
+/// 抽象事件描述符
 struct myevent_s{
     int fd; // 这里是 连接 socket
     int events; // 记录所关怀的事件类型，读事件还是写事件
@@ -129,7 +129,8 @@ void senddata(int fd, int events, void *arg)
     /// 发送数据
     int nbytes = write(ev->fd, ev->buf, ev->len);
     printf("nbytes = %d\n", nbytes);
-    eventDel(g_efd, ev); // 一次收发结束 删除  epoll 树上的 事件，不再监听
+    /// eventDel(g_efd, ev); // 一次收发结束 删除  epoll 树上的 事件，不再监听
+    /// 由于 eventAdd 中有修改处理 所以 可以不用删除
     if(nbytes > 0)
     {
         /// 设置 抽象事件 注册回调函数 并绑定到 epoll 事件多路分发器 （这里是 read事件）
@@ -154,18 +155,21 @@ void recvdata(int fd, int events, void *arg)
 {
     struct myevent_s *ev = (struct myevent_s*) arg;
     assert(fd == ev->fd);
+    bzero(ev->buf,BUFFLEN);
     /// 接收数据
     int nbytes = read(fd, ev->buf, sizeof ev->buf);
 
     if(nbytes > 0)
     {
-        /// nbytes > 0 表示实际从缓冲区读取的字节数目
-        ev->len = nbytes;
-        ev->buf[nbytes] = 0;
-        for (int i = 0; i < nbytes; ++i) {
+        /// TODO 这里len 可能 == MAX_BUFFLEN
+        int len = strlen(ev->buf); /// 不包含结束符
+
+        for (int i = 0; i < len; ++i) {
             ev->buf[i] = convert_char(ev->buf[i]);
         }
         printf("%s\n", ev->buf);
+        ev->len = len+1;
+        ev->buf[len] = 0;
         /// 设置 抽象事件 注册回调函数 并绑定到 epoll 事件多路分发器 （这里是 send 事件）
         /// 回调函数 senddata 处理 send事件
         eventSet(ev, ev->fd, EPOLLOUT, senddata, ev,ev->index);
@@ -293,7 +297,7 @@ int main()
         for(i = 0; i < nfd; ++i)
         {
 
-            /// 抽象的事件 处理 监听 与 连接 套接字
+            /// 抽象的事件描述符 处理 监听 与 连接 套接字
             struct myevent_s *ev = (struct myevent_s *)events[i].data.ptr;
             /// 回调函数处理事件   回调函数 在 eventSet 注册
             if((events[i].events & EPOLLIN) && (ev->events & EPOLLIN))
