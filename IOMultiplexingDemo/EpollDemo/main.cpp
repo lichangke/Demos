@@ -11,7 +11,7 @@ int main ()
     char c;
 
     // 键盘输入
-    keyboard = open("/dev/tty",O_RDONLY | O_NONBLOCK);
+    keyboard = open("/dev/tty",O_RDONLY | O_NONBLOCK); // /dev/tty
     assert(keyboard>0);
 
     //step1: epoll开始工作之前 先把文件描述符纳入epoll监管
@@ -19,7 +19,10 @@ int main ()
     listen_fd.data.fd = keyboard;
     listen_fd.events = EPOLLIN;
     int epoll_fd=epoll_create(10);
-    epoll_ctl(epoll_fd,EPOLL_CTL_ADD,0,&listen_fd);
+	
+    //epoll_ctl(epoll_fd,EPOLL_CTL_ADD,0,&listen_fd);  // 0 是标准输入 stdin
+	epoll_ctl(epoll_fd,EPOLL_CTL_ADD,keyboard,&listen_fd);
+	
 
     struct epoll_event ready_events[10];
     bool flag = true;
