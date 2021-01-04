@@ -1,6 +1,8 @@
 import requests
 import re
 import time
+import random
+
 payload = ""
 # 请求头
 #headers = {
@@ -53,10 +55,10 @@ url_list = [
             "https://blog.csdn.net/leacock1991/article/details/107738817",  #   《MySQL必知必会》学习笔记 目录
             "https://blog.csdn.net/leacock1991/article/details/107650096",  #   一步一步学linux操作系统 目录
             #"https://blog.csdn.net/leacock1991/article/details/104665452",  #   【剑指offer-2】题目目录【C++版本】
-            "https://blog.csdn.net/leacock1991/article/details/101467248",  #   网络协议笔记 目录
-            "https://blog.csdn.net/leacock1991/article/details/101467244",  #   Python 项目实践目录
+            #"https://blog.csdn.net/leacock1991/article/details/101467248",  #   网络协议笔记 目录
+            #"https://blog.csdn.net/leacock1991/article/details/101467244",  #   Python 项目实践目录
             "https://blog.csdn.net/leacock1991/article/details/101467212",  #   Python基础进阶学习目录
-            "https://blog.csdn.net/leacock1991/article/details/101467221",  #   SQL必知必会笔记目录
+            #"https://blog.csdn.net/leacock1991/article/details/101467221",  #   SQL必知必会笔记目录
             "https://blog.csdn.net/leacock1991" # 首页
             ]
 # url_1 = getUrls("https://blog.csdn.net/leacock1991")  # 首页
@@ -74,7 +76,7 @@ if __name__ == '__main__':
                         if -1 != link.find("#comments"):
                             continue
                         links.add(link)
-        print("============start=============")
+        print("============start=============", i)
         print("Total links = ", str(len(links)))
         print("User-Agent = ", User_Agent_list[i])
         for link in links:
@@ -84,6 +86,7 @@ if __name__ == '__main__':
                 print("get except")
                 continue
             print(link, "Ok")
-            time.sleep(4)
-        print("============end=============")
-        time.sleep(60*60)
+            time.sleep(random.randint(1,5))
+        print("============end=============", i)
+        time.sleep(60*20)
+    print("==========i=range(4)=end======")
