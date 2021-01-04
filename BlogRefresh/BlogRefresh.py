@@ -21,7 +21,7 @@ User_Agent_3 = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, 
 User_Agent_4 = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 
 
-User_Agent_list = [User_Agent_1,User_Agent_2,User_Agent_3,User_Agent_14]
+User_Agent_list = [User_Agent_1,User_Agent_2,User_Agent_3,User_Agent_4]
 
 headers = {
     "Accept": "*/*",
@@ -52,7 +52,7 @@ url_list = [
             "https://blog.csdn.net/leacock1991/article/details/111713017",  #   设计模式之模式概述(模式汇总)(C++实现)
             "https://blog.csdn.net/leacock1991/article/details/107738817",  #   《MySQL必知必会》学习笔记 目录
             "https://blog.csdn.net/leacock1991/article/details/107650096",  #   一步一步学linux操作系统 目录
-            "https://blog.csdn.net/leacock1991/article/details/104665452",  #   【剑指offer-2】题目目录【C++版本】
+            #"https://blog.csdn.net/leacock1991/article/details/104665452",  #   【剑指offer-2】题目目录【C++版本】
             "https://blog.csdn.net/leacock1991/article/details/101467248",  #   网络协议笔记 目录
             "https://blog.csdn.net/leacock1991/article/details/101467244",  #   Python 项目实践目录
             "https://blog.csdn.net/leacock1991/article/details/101467212",  #   Python基础进阶学习目录
@@ -75,7 +75,8 @@ if __name__ == '__main__':
                             continue
                         links.add(link)
         print("============start=============")
-        print("Total links = ",str(len(links)))
+        print("Total links = ", str(len(links)))
+        print("User-Agent = ", User_Agent_list[i])
         for link in links:
             try:
                 requests.request("GET", link, data=payload, headers=headers)
