@@ -48,15 +48,23 @@ def getUrls(url):
     return new_urls
 
 # 这里替换成你要刷访问量博客的首页
+url_list0 = [
+            "https://blog.csdn.net/leacock1991/category_10688843.html",  # C++设计模式计划
+            "https://blog.csdn.net/leacock1991/category_10611734.html",  # 数据库 相关
+            "https://blog.csdn.net/leacock1991/category_10087010.html",  # 趣谈Linux操作系统 学习
+            "https://blog.csdn.net/leacock1991/category_10611738.html",  # Python 相关
+            "https://blog.csdn.net/leacock1991/category_10670887.html",  # 转载搬运计划
+            "https://blog.csdn.net/leacock1991/category_9396904.html"  # 思维导图
+            ]
 url_list1 = [
             "https://blog.csdn.net/leacock1991/article/details/111713017",  #   设计模式之模式概述(模式汇总)(C++实现)
-            #"https://blog.csdn.net/leacock1991/article/details/107738817",  #   《MySQL必知必会》学习笔记 目录
-            #"https://blog.csdn.net/leacock1991/article/details/107650096",  #   一步一步学linux操作系统 目录
-            #"https://blog.csdn.net/leacock1991/article/details/104665452",  #   【剑指offer-2】题目目录【C++版本】
+            "https://blog.csdn.net/leacock1991/article/details/107738817",  #   《MySQL必知必会》学习笔记 目录
+            "https://blog.csdn.net/leacock1991/article/details/107650096",  #   一步一步学linux操作系统 目录
+            "https://blog.csdn.net/leacock1991/article/details/104665452",  #   【剑指offer-2】题目目录【C++版本】
             #"https://blog.csdn.net/leacock1991/article/details/101467248",  #   网络协议笔记 目录
-            #"https://blog.csdn.net/leacock1991/article/details/101467244",  #   Python 项目实践目录
-            #"https://blog.csdn.net/leacock1991/article/details/101467212",  #   Python基础进阶学习目录
-            #"https://blog.csdn.net/leacock1991/article/details/101467221",  #   SQL必知必会笔记目录
+            "https://blog.csdn.net/leacock1991/article/details/101467244",  #   Python 项目实践目录
+            "https://blog.csdn.net/leacock1991/article/details/101467212",  #   Python基础进阶学习目录
+            "https://blog.csdn.net/leacock1991/article/details/101467221",  #   SQL必知必会笔记目录
             "https://blog.csdn.net/leacock1991" # 首页
             ]
 url_list2 = [
@@ -73,8 +81,16 @@ url_list2 = [
             "https://blog.csdn.net/leacock1991/category_9641683.html",  # 分布式学习
             "https://blog.csdn.net/leacock1991/category_9396904.html"  # 思维导图
             ]
+url_list3 = [
+            "https://blog.csdn.net/leacock1991/category_9319783.html",  # 趣谈网络协议 学习
+            "https://blog.csdn.net/leacock1991/category_9538790.html",  # 算法训练营总结
+            "https://blog.csdn.net/leacock1991/category_9396932.html",  # Linux相关
+            "https://blog.csdn.net/leacock1991/category_10586501.html",  # 不知道如何分类的分类
+            "https://blog.csdn.net/leacock1991/category_9718166.html",  # 网络编程实战
+            "https://blog.csdn.net/leacock1991/category_9641683.html",  # 分布式学习
+            ]
 # url_1 = getUrls("https://blog.csdn.net/leacock1991")  # 首页
-url_list = url_list2
+url_list = url_list0
 
 if __name__ == '__main__':
     links = set()
