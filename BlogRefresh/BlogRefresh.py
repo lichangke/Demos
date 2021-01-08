@@ -21,8 +21,7 @@ User_Agent_3 = "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWeb
 User_Agent_1 = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3861.400 QQBrowser/10.7.4313.400"
 User_Agent_2 = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 
-
-User_Agent_list = [User_Agent_1,User_Agent_2,User_Agent_3,User_Agent_1]
+User_Agent_list = [User_Agent_1,User_Agent_2,User_Agent_3,User_Agent_4]
 
 headers = {
     "Accept": "*/*",
@@ -49,7 +48,7 @@ def getUrls(url):
     return new_urls
 
 # 这里替换成你要刷访问量博客的首页
-url_list = [
+url_list1 = [
             "https://blog.csdn.net/leacock1991/article/details/111713017",  #   设计模式之模式概述(模式汇总)(C++实现)
             #"https://blog.csdn.net/leacock1991/article/details/107738817",  #   《MySQL必知必会》学习笔记 目录
             #"https://blog.csdn.net/leacock1991/article/details/107650096",  #   一步一步学linux操作系统 目录
@@ -60,7 +59,22 @@ url_list = [
             #"https://blog.csdn.net/leacock1991/article/details/101467221",  #   SQL必知必会笔记目录
             "https://blog.csdn.net/leacock1991" # 首页
             ]
+url_list2 = [
+            "https://blog.csdn.net/leacock1991/category_10688843.html",  # C++设计模式计划
+            "https://blog.csdn.net/leacock1991/category_10611734.html",  # 数据库 相关
+            "https://blog.csdn.net/leacock1991/category_10087010.html",  # 趣谈Linux操作系统 学习
+            "https://blog.csdn.net/leacock1991/category_10611738.html",  # Python 相关
+            "https://blog.csdn.net/leacock1991/category_10670887.html",  # 转载搬运计划
+            "https://blog.csdn.net/leacock1991/category_9319783.html",  # 趣谈网络协议 学习
+            "https://blog.csdn.net/leacock1991/category_9538790.html",  # 算法训练营总结
+            "https://blog.csdn.net/leacock1991/category_9396932.html",  # Linux相关
+            "https://blog.csdn.net/leacock1991/category_10586501.html",  # 不知道如何分类的分类
+            "https://blog.csdn.net/leacock1991/category_9718166.html",  # 网络编程实战
+            "https://blog.csdn.net/leacock1991/category_9641683.html",  # 分布式学习
+            "https://blog.csdn.net/leacock1991/category_9396904.html"  # 思维导图
+            ]
 # url_1 = getUrls("https://blog.csdn.net/leacock1991")  # 首页
+url_list = url_list2
 
 if __name__ == '__main__':
     links = set()
