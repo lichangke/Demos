@@ -47,6 +47,7 @@ def getUrls(url):
                 new_urls.append(url)
     return new_urls
 
+
 # 这里替换成你要刷访问量博客的首页
 url_list0 = [
             "https://blog.csdn.net/leacock1991/category_10688843.html",  # C++设计模式计划
