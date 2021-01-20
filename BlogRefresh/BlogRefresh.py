@@ -18,8 +18,8 @@ payload = ""
 
 User_Agent_4 = "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Mobile Safari/537.36"
 User_Agent_3 = "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Mobile Safari/537.36"
-User_Agent_1 = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3861.400 QQBrowser/10.7.4313.400"
-User_Agent_2 = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
+User_Agent_2 = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3861.400 QQBrowser/10.7.4313.400"
+User_Agent_1 = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 
 User_Agent_list = [User_Agent_1,User_Agent_2,User_Agent_3,User_Agent_4]
 
@@ -51,13 +51,16 @@ def getUrls(url):
 # 这里替换成你要刷访问量博客的首页
 url_list0 = [
             "https://blog.csdn.net/leacock1991/category_10688843.html",  # C++设计模式计划
+            "https://blog.csdn.net/leacock1991/category_10752326.html",  # Go 相关
             "https://blog.csdn.net/leacock1991/category_10611734.html",  # 数据库 相关
             "https://blog.csdn.net/leacock1991/category_10087010.html",  # 趣谈Linux操作系统 学习
             "https://blog.csdn.net/leacock1991/category_10611738.html",  # Python 相关
             "https://blog.csdn.net/leacock1991/category_10670887.html",  # 转载搬运计划
-            "https://blog.csdn.net/leacock1991/category_9396904.html"  # 思维导图
+            "https://blog.csdn.net/leacock1991/category_9396904.html",   # 思维导图
+            "https://blog.csdn.net/leacock1991" # 首页
             ]
 url_list1 = [
+            "https://blog.csdn.net/leacock1991/article/details/112853343", #  从0开始学GO之目录
             "https://blog.csdn.net/leacock1991/article/details/111713017",  #   设计模式之模式概述(模式汇总)(C++实现)
             "https://blog.csdn.net/leacock1991/article/details/107738817",  #   《MySQL必知必会》学习笔记 目录
             "https://blog.csdn.net/leacock1991/article/details/107650096",  #   一步一步学linux操作系统 目录
@@ -70,6 +73,7 @@ url_list1 = [
             ]
 url_list2 = [
             "https://blog.csdn.net/leacock1991/category_10688843.html",  # C++设计模式计划
+            "https://blog.csdn.net/leacock1991/category_10752326.html",  # Go 相关
             "https://blog.csdn.net/leacock1991/category_10611734.html",  # 数据库 相关
             "https://blog.csdn.net/leacock1991/category_10087010.html",  # 趣谈Linux操作系统 学习
             "https://blog.csdn.net/leacock1991/category_10611738.html",  # Python 相关
@@ -90,15 +94,22 @@ url_list3 = [
             "https://blog.csdn.net/leacock1991/category_9718166.html",  # 网络编程实战
             "https://blog.csdn.net/leacock1991/category_9641683.html",  # 分布式学习
             ]
+url_list4 = [
+            "https://blog.csdn.net/leacock1991/category_10688843.html",  # C++设计模式计划
+            "https://blog.csdn.net/leacock1991/category_10752326.html",  # Go 相关
+            "https://blog.csdn.net/leacock1991/category_10670887.html",  # 转载搬运计划
+            "https://blog.csdn.net/leacock1991/category_9396904.html",  # 思维导图
+            "https://blog.csdn.net/leacock1991" # 首页
+            ]
 # url_1 = getUrls("https://blog.csdn.net/leacock1991")  # 首页
-url_list = url_list0
+url_list = url_list4
 
 if __name__ == '__main__':
     links = set()
    
     for i in range(4):
         if i == 0:
-            headers["User-Agent"] = User_Agent_list[i]
+            headers["User-Agent"] = User_Agent_list[random.randint(0, 1)]
             for url in url_list:
                 urls = getUrls(url)
                 for link in urls:
@@ -115,7 +126,7 @@ if __name__ == '__main__':
                 print("get except")
                 continue
             print(link, "Ok")
-            time.sleep(random.randint(1, 7))
+            time.sleep(random.randint(1, 6))
         print("============end=============", i)
         time.sleep(60*20)
     print("=======for=range(4)=end======")
