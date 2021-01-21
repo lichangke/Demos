@@ -103,7 +103,7 @@ url_list4 = [
             "https://blog.csdn.net/leacock1991" # 首页
             ]
 # url_1 = getUrls("https://blog.csdn.net/leacock1991")  # 首页
-url_list = url_list0
+url_list = url_list4
 
 if __name__ == '__main__':
     links = set()
