@@ -56,6 +56,7 @@ url_list0 = [
             "https://blog.csdn.net/leacock1991/category_10087010.html",  # 趣谈Linux操作系统 学习
             "https://blog.csdn.net/leacock1991/category_10611738.html",  # Python 相关
             "https://blog.csdn.net/leacock1991/category_10670887.html",  # 转载搬运计划
+            "https://blog.csdn.net/leacock1991/category_10586501.html",  # 不知道如何分类的分类
             "https://blog.csdn.net/leacock1991/category_9396904.html",   # 思维导图
             "https://blog.csdn.net/leacock1991" # 首页
             ]
@@ -65,7 +66,7 @@ url_list1 = [
             "https://blog.csdn.net/leacock1991/article/details/107738817",  #   《MySQL必知必会》学习笔记 目录
             "https://blog.csdn.net/leacock1991/article/details/107650096",  #   一步一步学linux操作系统 目录
             "https://blog.csdn.net/leacock1991/article/details/104665452",  #   【剑指offer-2】题目目录【C++版本】
-            #"https://blog.csdn.net/leacock1991/article/details/101467248",  #   网络协议笔记 目录
+            "https://blog.csdn.net/leacock1991/article/details/101467248",  #   网络协议笔记 目录
             "https://blog.csdn.net/leacock1991/article/details/101467244",  #   Python 项目实践目录
             "https://blog.csdn.net/leacock1991/article/details/101467212",  #   Python基础进阶学习目录
             "https://blog.csdn.net/leacock1991/article/details/101467221",  #   SQL必知必会笔记目录
